@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "bundler", ">= 2.1.4"
 gem "devise"
 gem "jbuilder", "~> 2.7"
+gem "omniauth-apple"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", ">=5.0.0.beta1"
 gem "rails", github: "rails/rails"
