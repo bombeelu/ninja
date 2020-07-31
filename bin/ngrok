@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require "dotenv"
+
+Dotenv.load
+system "ngrok start app -config ~/.ngrok2/ngrok.yml -config config/ngrok.yml"
