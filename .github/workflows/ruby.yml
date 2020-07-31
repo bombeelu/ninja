@@ -21,7 +21,9 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_PASSWORD: password
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
         ports:
           - 5432:5432
         # needed because the postgres container does not provide a healthcheck
@@ -36,13 +38,17 @@ jobs:
         uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
         with:
           ruby-version: 2.7.1
+      - name: Set up node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.7.0"
       - name: Install postgres client
         run: sudo apt-get install libpq-dev
       - name: Install dependencies
         run: RAILS_ENV=test bin/setup
         env: # The hostname used to communicate with the PostgreSQL service container
+          # If we were running the job on the VM this would be localhost
           POSTGRES_HOST: postgres
-          # The default PostgreSQL port
-          POSTGRES_PORT: 5432
+          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
       - name: Run tests
         run: bundle exec rspec
