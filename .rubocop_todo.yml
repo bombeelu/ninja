@@ -65,13 +65,6 @@ Style/Documentation:
     - 'app/models/application_record.rb'
     - 'config/application.rb'
 
-# Offense count: 38
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Enabled: true
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/RedundantBegin:
@@ -84,26 +77,5 @@ Style/StderrPuts:
   Exclude:
     - 'bin/yarn'
 
-# Offense count: 50
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'Gemfile'
-    - 'bin/webpack'
-    - 'bin/webpack-dev-server'
-    - 'bin/yarn'
-    - 'config/environments/production.rb'
-    - 'config/puma.rb'
-    - 'config/spring.rb'
-    - 'db/schema.rb'
-    - 'test/application_system_test_case.rb'
-    - 'test/channels/application_cable/connection_test.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: MinSize.
-# SupportedStyles: percent, brackets
 Style/SymbolArray:
   EnforcedStyle: percent
