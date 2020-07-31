@@ -19,11 +19,9 @@ jobs:
 
     services:
       postgres:
-        image: postgres:latest
+        image: postgres
         env:
-          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
         ports:
           - 5432:5432
         # needed because the postgres container does not provide a healthcheck
@@ -41,7 +39,7 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v1
         with:
-          node-version: "14.7.0"
+          node-version: 14.7.0
       - name: Install postgres client
         run: sudo apt-get install libpq-dev
       - name: Install dependencies
@@ -49,6 +47,6 @@ jobs:
         env: # The hostname used to communicate with the PostgreSQL service container
           # If we were running the job on the VM this would be localhost
           POSTGRES_HOST: postgres
-          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
+          POSTGRES_PORT: 5432
       - name: Run tests
         run: bundle exec rspec
