@@ -1,0 +1,7 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bombeelu_ninja_test
+  username: postgres
+  password: postgres
+  url: postgres://postgres:postgres@localhost/bombeelu_ninja_test
