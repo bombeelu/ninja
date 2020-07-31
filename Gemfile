@@ -8,6 +8,7 @@ ruby "2.7.1"
 gem "bootsnap", ">= 1.4.2", require: false
 gem "bundler", ">= 2.1.4"
 gem "devise"
+gem "devise_token_auth"
 gem "jbuilder", "~> 2.7"
 gem "omniauth-apple"
 gem "pg", ">= 0.18", "< 2.0"
