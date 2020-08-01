@@ -35,3 +35,11 @@ tmp/*
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+.env
+.env.*
+
+config/database.yml
+config/ngrok.yml
+
+secret_gen.rb
