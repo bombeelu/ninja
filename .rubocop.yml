@@ -980,8 +980,17 @@ Security/JSONLoad:
 Security/Open:
   Enabled: true
 
+Layout/SpaceInsideReferenceBrackets:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBrackets: no_space
+  Enabled: true
+
 Lint/BigDecimalNew:
   Enabled: true
+
+Style/Documentation:
+  Exclude:
+    - "db/migrate/**"
 
 Style/Strip:
   Enabled: true
@@ -1000,11 +1009,6 @@ Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
   Enabled: true
 
-Layout/SpaceInsideReferenceBrackets:
-  EnforcedStyle: no_space
-  EnforcedStyleForEmptyBrackets: no_space
-  Enabled: true
-
 Style/ModuleFunction:
   EnforcedStyle: extend_self
 
@@ -1013,3 +1017,11 @@ Lint/OrderedMagicComments:
 
 Lint/DeprecatedOpenSSLConstant:
   Enabled: true
+
+Metrics/AbcSize:
+  Exclude:
+    - "db/migrate/**"
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/**"

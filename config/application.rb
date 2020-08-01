@@ -9,7 +9,7 @@ require "rails/all"
 Bundler.require(*Rails.groups)
 # Initialize configuration defaults for originally generated Rails version.
 module BombeeluNinja
-  class Application < Rails::Application
+  class Application < Rails::Application # rubocop:todo Style/Documentation
     config.load_defaults 6.1
 
     # Settings in config/environments/* take precedence over those specified here.

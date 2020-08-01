@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Default user model
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   devise :database_authenticatable,
          :registerable,
          :recoverable,
