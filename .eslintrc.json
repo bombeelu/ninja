@@ -38,6 +38,7 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "import/no-cycle": ["error", { "ignoreExternal": true }],
     "import/no-commonjs": ["warn"],
-    "import/no-amd": ["warn"]
+    "import/no-amd": ["warn"],
+    "react/display-name": "off"
   }
 }

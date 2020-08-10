@@ -1,13 +1,25 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
-// of the page.
+import React, { useMemo } from "react";
+import { useMediaQuery, CssBaseline } from "@material-ui/core";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-import React from "react";
+const App = (): React.ReactElement => {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const theme = useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: prefersDarkMode ? "dark" : "light",
+        },
+      }),
+    [prefersDarkMode]
+  );
 
-interface Props {
-  name: string;
-}
-
-const App = (props: Props): React.ReactElement => <div>Hello {props.name}!</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <div>Hello Bombeelu!</div>
+    </ThemeProvider>
+  );
+};
 
 export default App;
